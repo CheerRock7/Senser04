@@ -8,7 +8,7 @@ const client = new Client({
 client.connect();
 export async function GET() {
     try {
-      const result = await client.query('SELECT * FROM "BO013"');
+      const result = await         lient.query('SELECT * FROM "BO013"');
       //return new Response(JSON.stringify({ message: "GET DATA OK"}), {
         return new Response(JSON.stringify(result.rows), {
         status: 200,
