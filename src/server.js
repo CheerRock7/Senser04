@@ -21,7 +21,7 @@ client.connect().catch((err) => {
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Define routes
-app.get('/api/getdata', async (req, res) => {
+app.get('/api/control', async (req, res) => {
     try {
         const result = await client.query('SELECT ultrasonic, buzzer, led FROM "BO013" WHERE id = 1');
         if (result.rows.length === 0) {
