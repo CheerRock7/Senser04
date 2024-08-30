@@ -6,6 +6,7 @@ const client = new Client({
   connectionString: process.env.DATABASE_URL,
 });
 client.connect();
+export const dynamic = 'force-dynamic'
 export async function GET() {
     try {
       const result = await client.query('SELECT * FROM "BO013"');
