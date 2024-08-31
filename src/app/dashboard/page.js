@@ -97,7 +97,7 @@ export default function Dashboard() {
                 <p style={styles.cardContent}>{data.led === '1' ? 'On' : 'Off'}</p>
             </div>
             <div style={styles.card}>
-                <h2 style={styles.cardTitle}>LED Status</h2>
+                <h2 style={styles.cardTitle}>System Status</h2>
                 <LEDControlButton/>
             </div>
         </main>

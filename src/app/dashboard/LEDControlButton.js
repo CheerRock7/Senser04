@@ -57,7 +57,7 @@ const LEDControlButton = () => {
                 disabled={loading}
                 className={`btn ${loading ? 'btn-secondary' : ledStatus ? 'btn-danger' : 'btn-success'} me-2`}
             >
-                {loading ? 'Processing...' : ledStatus ? 'Turn LED Off' : 'Turn LED On'}
+                {loading ? 'Processing...' : ledStatus ? 'Off' : 'On'}
             </button>
         </div>
     );
