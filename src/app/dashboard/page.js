@@ -47,7 +47,7 @@ export default function Dashboard() {
     const [data, setData] = useState({
         ultrasonic: 'Loading...',
         buzzer: 'Loading...',
-        led: 'Loading...',
+        led1: 'Loading...',
         led2: 'Loading...', // Add state for LED2
     });
 
@@ -68,7 +68,7 @@ export default function Dashboard() {
                     setData({
                         ultrasonic: firstItem.ultrasonic,
                         buzzer: firstItem.buzzer,
-                        led: firstItem.led,
+                        led1: firstItem.led1,
                         led2: firstItem.led2, // Update LED2 status
                     });
                     setLed2Status(firstItem.led2); // Set LED2 status
@@ -76,7 +76,7 @@ export default function Dashboard() {
                     setData({
                         ultrasonic: 'No Data',
                         buzzer: 'No Data',
-                        led: 'No Data',
+                        led1: 'No Data',
                         led2: 'No Data',
                     });
                 }
