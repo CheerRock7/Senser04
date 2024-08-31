@@ -25,31 +25,3 @@ export async function GET() {
     });
   }
 }
-
-// Function to handle POST request
-export async function POST(request) {
-  try {
-    const data = await request.json();
-    const { led2 } = data;
-
-    if (led2 === undefined) {
-      return new Response(JSON.stringify({ error: "LED2 status not provided" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      });
-    }
-
-    // Update LED2 status in the database
-    await client.query('UPDATE "BO013" SET "led2" = $1 WHERE id = 1', [led2]); // Adjust the query based on your table structure
-
-    return new Response(JSON.stringify({ message: "LED2 status updated successfully" }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
-  } catch (error) {
-    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-}

@@ -35,7 +35,7 @@ export async function POST(request) {
         }
 
         const result = await client.query(
-            'UPDATE "BO013" SET ultrasonic = $1, buzzer = $2, led1 = $3, led2 = $4 WHERE id = 1',
+            'UPDATE "BO013" SET ultrasonic = $1, buzzer = $2, led = $3 WHERE id = 1',
             [ultrasonic, buzzer, led]
         );
 
