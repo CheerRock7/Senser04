@@ -24,10 +24,10 @@ const corsHeaders = {
 export async function POST(request) {
     try {
         const requestBody = await request.json(); // Parse the request body as JSON
-        const { ultrasonic, buzzer, led } = requestBody;
+        const { ultrasonic, buzzer, led1 } = requestBody;
 
         // Validate incoming data
-        if (typeof ultrasonic === 'undefined' || typeof buzzer === 'undefined' || typeof led === 'undefined') {
+        if (typeof ultrasonic === 'undefined' || typeof buzzer === 'undefined' || typeof led1 === 'undefined') {
             return new Response(JSON.stringify({ error: "Missing required fields" }), {
                 status: 400,
                 headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -36,7 +36,7 @@ export async function POST(request) {
 
         const result = await client.query(
             'UPDATE "BO013" SET ultrasonic = $1, buzzer = $2, led1 = $3, led2 = $4 WHERE id = 1',
-            [ultrasonic, buzzer, led]
+            [ultrasonic, buzzer, led1]
         );
 
         return new Response(JSON.stringify({ message: "Update successful" }), {
